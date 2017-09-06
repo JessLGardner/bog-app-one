@@ -9,10 +9,14 @@ class CreaturesController < ApplicationController
     end
 
     def create
-        @creature = Creature.new(creature_params)
+        @creature = Creature.create(creature_params)
         if @creature.save
-            redirect_to creatures_path
+            redirect_to creature_path(@creature.id)
         end
+    end
+
+    def show
+        @creature = Creature.find(params[:id])
     end
 
 
