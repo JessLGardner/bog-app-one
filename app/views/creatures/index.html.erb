@@ -1,7 +1,6 @@
 <h1>Creatures!</h1>
 
-<% @creatures.each do |creature| %>
-    <p>Name: <%= creature.name %></p>
-    <p>Description: <%= creature.description %></p>
-    <br/>
+<% @creatures.order("created_at ASC").each do |creature| %>
+    <div><p>Name: <%= creature.name %></p>
+    <p>Description: <%= creature.description %></p><br/></div>
 <% end %>
